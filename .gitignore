@@ -1,0 +1,7 @@
+/node_modules
+/public/storage
+/vendor
+/.idea
+/.vagrant
+/tests/_output/
+/.phpstorm.meta.php

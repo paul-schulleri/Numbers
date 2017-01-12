@@ -1,0 +1,25 @@
+{
+    "name": "schulleri/numbers",
+    "description": "Number helpers",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0",
+        "symfony/var-dumper": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Schulleri\\Numbers\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Schulleri",
+            "email": "paul@schulleri.com"
+        }
+    ]
+}
