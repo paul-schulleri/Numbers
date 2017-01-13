@@ -10,21 +10,17 @@ use Schulleri\Services\Contracts\PrimeFactorizationContract;
 class PrimeFactorization implements PrimeFactorizationContract
 {
     /**
-     * @param int $number
+     * @param int $value
      * @return array
      */
-    public function getPrimeFactors(int $number): array
+    public function getPrimeFactors(int $value): array
     {
         $primes = [];
 
-        for($candidate = 2; $number > 1; ++$candidate) {
-            for (; $number % $candidate === 0; $number /= $candidate) {
+        for ($candidate = 2; $value > 1; ++$candidate) {
+            for (; $value % $candidate === 0; $value /= $candidate) {
                 $primes[] = $candidate;
             }
-        }
-
-        if ($number > 1) {
-            $primes[] = $number;
         }
 
         return $primes;
@@ -34,8 +30,8 @@ class PrimeFactorization implements PrimeFactorizationContract
      * @param int $value
      * @return bool
      */
-    public function isPrimeFactor(int $value) : bool
+    public function isPrimeFactor(int $value): bool
     {
-        return !count($this->getPrimeFactors($value)) > 1;
+        return !(count($this->getPrimeFactors($value)) > 1);
     }
 }

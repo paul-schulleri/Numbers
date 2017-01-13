@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class FibonacciTest
  * @package Schulleri\Services
+ * @covers Schulleri\Services\Fibonacci
  */
 class FibonacciTest extends TestCase
 {

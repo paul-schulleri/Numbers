@@ -8,10 +8,10 @@ namespace Schulleri\Services\Contracts;
 interface PrimeFactorizationContract
 {
     /**
-     * @param int $number
+     * @param int $value
      * @return array
      */
-    public function getPrimeFactors(int $number): array;
+    public function getPrimeFactors(int $value): array;
 
     /**
      * @param int $value

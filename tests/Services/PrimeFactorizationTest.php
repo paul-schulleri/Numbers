@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Class PrimeFactorizationTest
  * @package Schulleri\Services
+ * @covers Schulleri\Services\PrimeFactorization
  */
 class PrimeFactorizationTest extends TestCase
 {
@@ -32,20 +33,20 @@ class PrimeFactorizationTest extends TestCase
     /**
      *
      */
-    public function isPrimeFactorTrue()
+    public function testIsPrimeFactorTrue()
     {
         $this->assertTrue(
-            (new PrimeFactorization())->isPrimeFactor(8)
+            (new PrimeFactorization())->isPrimeFactor(7)
         );
     }
 
     /**
      *
      */
-    public function isPrimeFactorFalse()
+    public function testIsPrimeFactorFalse()
     {
-        $this->assertTrue(
-            (new PrimeFactorization())->isPrimeFactor(7)
+        $this->assertFalse(
+            (new PrimeFactorization())->isPrimeFactor(8)
         );
     }
 }

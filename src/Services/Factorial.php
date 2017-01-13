@@ -1,7 +1,6 @@
 <?php
 namespace Schulleri\Services;
 
-
 use Schulleri\Services\Contracts\FactorialContract;
 
 /**
