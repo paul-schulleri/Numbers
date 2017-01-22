@@ -25,4 +25,24 @@ class FactorialTest extends TestCase
     {
         $this->assertEquals(1, (new Factorial())->generate(0));
     }
+
+    /**
+     *
+     */
+    public function testFactorialRange()
+    {
+        $this->assertEquals(
+            [1, 1, 2, 6, 24, 120], (new Factorial())->generateFactorialRange(5)
+        );
+    }
+
+    /**
+     *
+     */
+    public function testFactorialRangeWith_NegativeStart()
+    {
+        $this->assertEquals(
+            [1, 1, 2, 6, 24, 120], (new Factorial())->generateFactorialRange(5, -5)
+        );
+    }
 }

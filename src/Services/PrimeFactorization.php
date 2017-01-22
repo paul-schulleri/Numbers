@@ -34,4 +34,20 @@ class PrimeFactorization implements PrimeFactorizationContract
     {
         return !(count($this->getPrimeFactors($value)) > 1);
     }
+
+    /**
+     * @param int $start
+     * @param int $end
+     * @return array
+     */
+    public function generatePrimesRange(int $end, int $start = 2): array
+    {
+        $range = range($start < 2 ? 2 : $start, $end);
+
+        $primes = array_filter($range, function (int $value) {
+            return $this->isPrimeFactor($value) ?: null;
+        });
+
+        return array_values($primes);
+    }
 }

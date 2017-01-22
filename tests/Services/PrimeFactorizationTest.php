@@ -49,6 +49,39 @@ class PrimeFactorizationTest extends TestCase
             (new PrimeFactorization())->isPrimeFactor(8)
         );
     }
+
+    /**
+     *
+     */
+    public function testGeneratePrimesRangeWithEnd()
+    {
+        $this->assertEquals(
+            [2, 3, 5, 7, 11, 13, 17, 19],
+            (new PrimeFactorization())->generatePrimesRange(19)
+        );
+    }
+
+    /**
+     *
+     */
+    public function testGeneratePrimesRangeWithEndAndStart()
+    {
+        $this->assertEquals(
+            [5, 7, 11, 13, 17, 19],
+            (new PrimeFactorization())->generatePrimesRange(19, 5)
+        );
+    }
+
+    /**
+     *
+     */
+    public function testGeneratePrimesRangeWithEndAnd_NegativeStart()
+    {
+        $this->assertEquals(
+            [2, 3, 5],
+            (new PrimeFactorization())->generatePrimesRange(6, -5)
+        );
+    }
 }
 
 

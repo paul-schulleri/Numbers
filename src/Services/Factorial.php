@@ -25,4 +25,20 @@ class Factorial implements FactorialContract
 
         return $faculty;
     }
+
+    /**
+     * @param int $start
+     * @param int $end
+     * @return array
+     */
+    public function generateFactorialRange(int $end, int $start = 0): array
+    {
+        $range = range($start > 0 ?: 0, $end);
+
+        $primes = array_map(function (int $value): int {
+            return $this->generate($value);
+        }, $range);
+
+        return array_values($primes);
+    }
 }

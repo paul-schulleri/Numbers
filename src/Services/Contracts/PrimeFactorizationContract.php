@@ -18,4 +18,11 @@ interface PrimeFactorizationContract
      * @return bool
      */
     public function isPrimeFactor(int $value) : bool;
+
+    /**
+     * @param int $start
+     * @param int $end
+     * @return array
+     */
+    public function generatePrimesRange(int $end, int $start = 2): array;
 }
