@@ -74,13 +74,28 @@ class BinarySearchTest extends TestCase
     /**
      *
      */
-    public function testSearchForOutOfRange()
+    public function testSearchForOutOfRangeLeft()
     {
         $this->expectException(OutOfRangeException::class);
 
         $list = ['0', '1', '4', '19', '22', '22', '66', '89', '1781'];
 
         $needle = 2;
+
+        $service = new BinarySearch($list);
+        $service->search($needle);
+    }
+
+    /**
+     *
+     */
+    public function testSearchForOutOfRangeRight()
+    {
+        $this->expectException(OutOfRangeException::class);
+
+        $list = ['0', '1', '4', '19', '22', '22', '66', '89', '1781'];
+
+        $needle = 200000000;
 
         $service = new BinarySearch($list);
         $service->search($needle);

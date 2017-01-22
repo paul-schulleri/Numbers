@@ -41,15 +41,15 @@ class BinarySearch
         $left = $left ?: 0;
         $right = $right ?: count($this->list) - 1;
 
+        if ($left > $right) {
+            throw new OutOfRangeException();
+        }
+
         $mid = ($left + $right) >> 1;
 
         if ($this->list[$mid] === $needle) {
             $this->result = $this->list[$mid];
             return $this;
-        }
-
-        if ($this->executions > count($this->list)) {
-            throw new OutOfRangeException();
         }
 
         if ($this->list[$mid] > $needle) {
