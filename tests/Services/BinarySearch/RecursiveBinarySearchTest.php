@@ -1,15 +1,15 @@
 <?php
-namespace Schulleri\Services;
+namespace Schulleri\Services\BinarySearch;
 
 use OutOfRangeException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class BinarySearchTest
+ * Class RecursiveBinarySearchTest
  * @package Schulleri\Services
- * @covers Schulleri\Services\BinarySearch
+ * @covers Schulleri\Services\BinarySearch\RecursiveBinarySearch
  */
-class BinarySearchTest extends TestCase
+class RecursiveBinarySearchTest extends TestCase
 {
     /**
      *
@@ -20,7 +20,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 4;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $result = $service->search($needle);
 
         $this->assertEquals($needle, $result->getResult());
@@ -35,7 +35,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 2;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $result = $service->search($needle);
 
         $this->assertEquals(2, $result->getExecutions());
@@ -50,7 +50,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 1781;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $result = $service->search($needle);
 
         $this->assertEquals($needle, $result->getResult());
@@ -65,7 +65,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 89;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $result = $service->search($needle);
 
         $this->assertEquals(3, $result->getExecutions());
@@ -82,7 +82,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 2;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $service->search($needle);
     }
 
@@ -97,7 +97,7 @@ class BinarySearchTest extends TestCase
 
         $needle = 200000000;
 
-        $service = new BinarySearch($list);
+        $service = new RecursiveBinarySearch($list);
         $service->search($needle);
     }
 }
